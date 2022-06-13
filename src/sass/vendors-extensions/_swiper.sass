@@ -1,0 +1,30 @@
+@use "../utils/variables" as *
+@use "../utils/functions" as *
+
+button.swiper-pagination-bullet
+  border: rem(1) solid $bg-dark
+  &-active
+    border-color: transparent
+
+.swiper-pagination-bullet
+  width: rem(12)
+  height: rem(12)
+  background: transparent
+  border: rem(1) solid $bg-dark
+  opacity: 1
+  transition: background .25s ease, border-color .25s ease
+  &-active
+    background: $accent
+    border-color: transparent
+  &:focus-visible
+    box-shadow: $default-focus-visible
+
+.swiper
+  padding-bottom: rem(64)
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
+  bottom: 0
+  line-height: 1
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+  margin: 0 rem(10) 

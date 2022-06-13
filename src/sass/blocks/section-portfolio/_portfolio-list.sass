@@ -1,0 +1,44 @@
+@use "sass:map"
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.portfolio-list
+  @include list-reset
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  width: 100%
+  padding-right: rem(1)
+
+  @include lg
+    padding-right: 0
+    padding-bottom: rem(1)
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(3, 1fr)
+
+  &__item
+    padding: rem(16)
+    margin-right: rem(-1)
+    border: rem(1) solid #3A3C56
+    min-height: rem(450)
+    max-height: rem(780)
+    &:first-child
+      border-left-width: 0
+    &:last-child
+      border-right-width: 0
+
+    @include lg
+      margin-right: 0
+      margin-bottom: rem(-1)
+      &:first-child
+        border-left-width: initial
+      &:last-child
+        border-right-width: initial
+    @include sm
+      border-left-width: 0
+      border-right-width: 0
+      &:first-child
+        border-left-width: 0
+      &:last-child
+        border-right-width: 0
+        

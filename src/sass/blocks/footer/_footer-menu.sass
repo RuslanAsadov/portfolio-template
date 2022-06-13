@@ -1,0 +1,23 @@
+@use '../../utils/variables' as *
+@use '../../utils/mixins' as *
+@use '../../utils/functions' as *
+
+.footer-menu
+  
+  &__title
+    font-size: rem(16)
+    line-height: 2
+    font-weight: 400
+    color: $accent
+    text-transform: uppercase
+    letter-spacing: rem(3)
+    margin: 0 0 rem(16)
+
+  &__list
+    @include list-reset
+
+  &__link
+    color: inherit
+    text-decoration: none
+    &:hover
+      text-decoration: underline

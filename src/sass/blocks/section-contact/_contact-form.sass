@@ -1,0 +1,26 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+  
+.contact-form
+  padding: rem(57) rem(48) rem(48)
+  background-color: #fff
+  border-radius: rem(6)
+  color: $text-dark-gray
+  display: flex
+  flex-direction: column
+  @include sm
+    padding: rem(57) rem(28) rem(48)
+
+  &__title
+    color: $text-dark
+    font-size: rem(24)
+    font-weight: bold
+    margin: 0 0 1em
+
+  &__form-control:not(:last-child)
+    margin-bottom: rem(16)
+
+  &__submit
+    margin-top: rem(32)
+    align-self: flex-end

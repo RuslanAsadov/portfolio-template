@@ -1,0 +1,68 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.about-item
+  --padding-x: #{rem(48)}
+  --icon-size: #{rem(112)}
+  $padding-y: rem(32)
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  padding: rem(32) var(--padding-x)
+  min-height: calc(var(--icon-size) + $padding-y * 2)
+  padding-left: calc(var(--padding-x) + var(--icon-size) + rem(40))
+  color: $text-dark
+  &::before
+    display: block
+    content: ''
+    height: var(--icon-size)
+    width: var(--icon-size)
+    position: absolute
+    left: var(--padding-x)
+    top: $padding-y
+    background-color: $accent
+    border-radius: 50%
+  &::after
+    display: block
+    content: ''
+    height: rem(48)
+    width: rem(48)
+    position: absolute
+    top: calc($padding-y + var(--icon-size) / 2)
+    left: calc(var(--padding-x) + var(--icon-size) / 2)
+    transform: translate(-50%, -50%)
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+
+  &--icon-experience::after
+    background-image: url('../img/sprite.svg#icon-3')
+  &--icon-projects::after
+    background-image: url('../img/sprite.svg#icon-2')
+
+  &__title
+    font-size: rem(40)
+    line-height: 1.2
+    margin: 0
+
+  &__text
+    font-size: rem(20)
+    line-height: 1.6
+    margin: 0.65em 0 0
+
+  @include lg
+    --padding-x: #{rem(29)}
+    padding-left: calc(var(--padding-x) + var(--icon-size) + rem(28))
+  @include xs
+    --icon-size: #{rem(80)}
+    padding-left: calc(var(--padding-x) + var(--icon-size) + rem(25))
+    &::after
+      height: rem(32)
+      width: rem(32)
+    &__title
+      font-size: rem(35)
+    &__text
+      font-size: rem(18)

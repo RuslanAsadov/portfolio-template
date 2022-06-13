@@ -1,0 +1,27 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.faq-logotypes-list
+  list-style: none
+  margin-bottom: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  grid-gap: rem(40)
+  @include md
+    flex-wrap: wrap
+    justify-content: center
+
+  &__item
+    display: flex
+    align-items: center
+    justify-content: center
+    max-height: rem(50)
+    height: 100%
+
+  &__img
+    display: block
+    max-height: inherit
+    max-width: 100%
+    width: auto

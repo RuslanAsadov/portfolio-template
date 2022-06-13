@@ -1,0 +1,24 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+  
+.section
+  background-color: $bg-light
+  padding: rem(100) 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  @include xl
+    min-height: rem(750)
+  @include lg
+    min-height: auto
+
+  &--dark
+    background-color: $bg-dark
+    color: $text-light-gray
+
+  &--big-height
+    min-height: rem(880)
+    @media only screen and (max-height: rem(850))
+      min-height: auto

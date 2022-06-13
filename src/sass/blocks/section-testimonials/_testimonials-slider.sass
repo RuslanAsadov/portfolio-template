@@ -1,0 +1,38 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.testimonials-slider
+  max-width: 100%
+  width: 100%
+  padding-bottom: rem(76)
+  @include md
+    padding-bottom: rem(73)
+  @include sm
+    padding-right: $continer-gutter
+    padding-left: $continer-gutter
+
+  &__list
+    @include list-reset
+
+  &__item
+    max-width: rem(770)
+    width: 100%
+    opacity: .25
+    transition: opacity 1s ease
+    box-sizing: border-box
+    &:focus-visible
+      opacity: 1 !important
+    &.swiper-slide-active
+      opacity: 1
+    &.swiper-slide-next, &.swiper-slide-prev
+      cursor: pointer
+    @include xl
+      max-width: rem(600)
+    @include lg
+      max-width: rem(570)
+    @include md
+      max-width: rem(500)
+    @include sm
+      max-width: 100%
+

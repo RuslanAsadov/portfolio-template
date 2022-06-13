@@ -1,0 +1,13 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.contact-list__item
+  &#{&}--address::after
+    background-image: url('../img/sprite.svg#contact-icon-1')
+
+  &#{&}--phone::after
+    background-image: url('../img/sprite.svg#contact-icon-2')
+
+  &#{&}--email::after
+    background-image: url('../img/sprite.svg#contact-icon-3')

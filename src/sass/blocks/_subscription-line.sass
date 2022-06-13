@@ -1,0 +1,50 @@
+@use '../utils/variables' as *
+@use '../utils/mixins' as *
+@use '../utils/functions' as *
+
+.subscription-line
+  padding: rem(56) 0
+  display: grid
+  grid-template-columns: 1fr minmax(min-content, rem(570))
+  column-gap: rem(30)
+  align-items: center
+  @include xl
+    grid-template-columns: 1fr minmax(min-content, rem(450))
+  @include lg
+    grid-template-columns: 1fr
+  @include sm
+    padding: rem(72) 0
+
+  &__form
+    grid-column: 2 / 3
+    grid-row: 1 / 3
+    display: flex
+    align-items: stretch
+    gap: rem(30)
+    width: 100%
+    max-height: rem(48)
+    @include lg
+      grid-column: auto
+      grid-row: auto
+      margin-top: rem(36)
+    @include md
+      gap: rem(20)
+    @include sm
+      max-height: none
+      flex-direction: column
+      gap: rem(16)
+
+  &__input
+    width: 100%
+
+  &__submit
+    min-width: rem(170)
+
+  &__title
+    color: $text-dark
+    margin: 0
+    font-size: rem(24)
+    line-height: 1.33
+
+  &__text
+    margin: rem(3) 0 0

@@ -1,0 +1,63 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.testimonial
+  background-color: #fff
+  border: rem(1) solid #F3D1BF
+  padding: rem(48) rem(47)
+  display: grid
+  grid-template-columns: min-content 1fr
+  grid-template-areas: 'rating rating' 'content content' 'photo .' 'photo name' 'photo workplace' 'photo .'
+  border-bottom-left-radius: rem(6)
+  border-bottom-right-radius: rem(6)
+  @include sm
+    padding: rem(46) rem(28)
+    border-radius: rem(6)
+
+  &__rating
+    margin-bottom: rem(36)
+    grid-area: rating
+    @include sm
+      margin-bottom: rem(34)
+
+  &__content
+    grid-area: content
+    margin: 0
+    margin-bottom: rem(36)
+    @include sm
+      margin-bottom: rem(24)
+
+  &__text
+    margin: 0
+    &:not(:last-child)
+      margin-bottom: 0.5em 
+
+  &__photo
+    grid-area: photo
+    height: rem(80)
+    width: rem(80)
+    margin-right: rem(23)
+    border-radius: 50%
+    overflow: hidden
+
+  &__img
+    object-fit: cover
+    display: block
+    width: 100%
+    height: 100%
+
+  &__name
+    grid-area: name
+    color: $text-dark
+    margin: 0
+    font-size: rem(24)
+    font-weight: 700
+    line-height: 1.3
+
+  &__workplace
+    grid-area: workplace
+    color: $text-dark
+    margin: 0
+    margin-top: 0.18em
+      

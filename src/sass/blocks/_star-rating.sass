@@ -1,0 +1,20 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+  
+.star-rating
+  display: inline-flex
+  height: rem(24)
+  gap: rem(8)
+
+  &__item
+    display: inline-block
+    height: rem(24)
+    width: rem(24)
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url('../img/sprite.svg#star-unchecked')
+
+    &--checked
+      background-image: url('../img/sprite.svg#star-checked')

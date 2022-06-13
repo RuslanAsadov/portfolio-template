@@ -1,0 +1,19 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.accordion-list
+  @include list-reset
+  
+  &__item
+    margin: 0
+    &:not(:last-child)
+      margin-bottom: rem(-1)
+
+  &__item:first-child &__inner
+    border-top-left-radius: rem(6)
+    border-top-right-radius: rem(6)
+    
+  &__item:last-child &__inner
+    border-bottom-left-radius: rem(6)
+    border-bottom-right-radius: rem(6)

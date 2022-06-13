@@ -1,0 +1,27 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+  
+.section-faq
+  padding: rem(140) 0 rem(123)
+  @include lg
+    padding: rem(100) 0 rem(110)
+  @include md
+    padding: rem(92) 0 rem(98)
+
+  &__accordion
+    max-width: rem(570)
+    width: 100%
+    @include lg
+      max-width: 100%
+
+  &__logotypes
+    margin-top: rem(117)
+
+  &__columns
+    align-items: flex-start
+    @include lg
+      flex-direction: column
+      gap: rem(50)
+    @include md
+      gap: rem(36)

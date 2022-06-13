@@ -1,0 +1,43 @@
+@use "sass:map"
+@use '../utils/functions' as *
+@use '../utils/variables' as *
+	
+@mixin font($name, $style, $weight, $url)
+	@font-face
+		font-family: $name
+		font-style: $style
+		font-weight: $weight
+		src: url($url) format('woff2')
+
+@mixin list-reset
+	margin: 0
+	padding: 0
+	list-style: none
+
+@mixin breakpoint($px)
+	@media only screen and (max-width: rem($px))
+		@content
+	
+// Extra large devices
+@mixin xl
+	@media (max-width: map.get($breakpoints, 'xl'))
+		@content
+		
+// Large devices
+@mixin lg
+	@media (max-width: map.get($breakpoints, 'lg'))
+		@content
+		
+// Medium devices
+@mixin md
+	@media (max-width: map.get($breakpoints, 'md'))
+		@content
+
+// Small devices
+@mixin sm
+	@media (max-width: map.get($breakpoints, 'sm'))
+		@content
+
+@mixin xs
+	@media (max-width: map.get($breakpoints, 'xs'))
+		@content

@@ -1,0 +1,31 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.section-service
+  padding: rem(92) 0 rem(100)
+
+  &__text
+    text-align: center
+    margin: rem(60) 0 0
+    @include lg
+      margin: rem(55) 0 0
+    @include md
+      margin: rem(50) 0 0
+    @include sm
+      margin: rem(44) 0 0
+      
+  &__link
+    color: $text-dark
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+  &__list
+    margin-top: rem(64)
+    @include lg
+      margin-top: rem(54)
+    @include md
+      margin-top: rem(44)
+    @include sm
+      margin-top: rem(35)

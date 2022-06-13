@@ -1,0 +1,111 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.accordion-item
+  --icon-size: #{rem(32)}
+
+  background: #fff
+  color: $text-light
+  transition: background-color .4s ease, border-color .4s ease
+  background-color: $bg-dark
+  height: 100%
+  border: rem(1) solid #3A3C56
+
+  &__header
+    padding: rem(40) calc((rem(34) * 2) + var(--icon-size)) rem(40) rem(48)
+    display: block
+    color: $text-light
+    position: relative
+    cursor: pointer
+    user-select: none
+    transition: color .4s ease, border-color .4s ease, border-bottom-color 0s
+    @include xl
+      padding: rem(40) calc((rem(30) * 2) + var(--icon-size)) rem(40) rem(42)
+    @include sm
+      padding: rem(40) calc((rem(28) * 2) + var(--icon-size)) rem(40) rem(28)
+
+    &::marker, &::-webkit-details-marker
+      display: none
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 50%
+    &::before
+      width: var(--icon-size)
+      height: var(--icon-size)
+      background-color: $accent
+      border-radius: 50%
+      right: rem(34)
+      transform: translateY(-50%)
+    &::after
+      width: rem(12)
+      height: rem(7)
+      background-image: url('../img/sprite.svg#rounded-arrow')
+      background-size: 100%
+      background-position: center
+      background-repeat: no-repeat
+      right: rem(34)
+      transition: transform .25s ease
+      transform: translate(calc((var(--icon-size) / 2 * -1) + 50%), -50%) rotate(0)
+
+  &__title
+    font-weight: 700
+    font-size: rem(24)
+    line-height: 1.33
+    margin: 0
+
+  &__body
+    --translate-y: #{rem(-5)}
+
+    padding: 0 rem(50)
+    color: $text-light
+    max-height: 0
+    overflow: hidden
+    opacity: 0
+    transition: max-height .4s ease, color .4s ease, opacity .4s ease
+    transform: translateY(var(--translate-y))
+    @include xl
+      padding: 0 rem(42)
+    @include sm
+      --translate-y: #{rem(-20)}
+      padding: 0 rem(28)
+      
+    > *:last-child
+      margin-bottom: calc(rem(44) + var(--translate-y))
+      @include sm
+        margin-bottom: calc(rem(38) + var(--translate-y))
+
+
+  &__text
+    margin: 0
+    &:not(:last-child)
+      margin-bottom: 0.5em
+
+
+  &#{&}--hiding[open]
+    background-color: $bg-dark
+    border: rem(1) solid #3A3C56
+
+  &#{&}--hiding[open] &__header
+    color: $text-light
+    border-bottom-color: transparent
+    &::after
+      transform: translate(calc((var(--icon-size) / 2 * -1) + 50%), -50%) rotate(0)
+
+  &#{&}--hiding[open] &__body
+    color: $text-light
+    opacity: 0
+
+  &[open]
+    background-color: #fff
+    border-color:  transparent
+
+  &[open] &__header
+    color: $text-dark
+    &::after
+      transform: translate(calc((var(--icon-size) / 2 * -1) + 50%), -50%) rotate(180deg)
+
+  &[open] &__body
+    color: $text-dark-gray
+    opacity: 1

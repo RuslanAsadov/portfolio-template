@@ -1,0 +1,41 @@
+@use '../utils/variables' as *
+@use '../utils/mixins' as *
+@use '../utils/functions' as *
+
+.form-control
+  $padding-x: rem(16)
+
+  padding: rem(8) $padding-x rem(6)
+  color: $text-dark
+  border: rem(1) solid #F3D1BF
+  background: #fff
+  border-radius: rem(6)
+  min-height: rem(48)
+  line-height: 2
+  font-family: inherit
+  &::placeholder
+    color: $text-dark-gray
+  &:focus
+    box-shadow: 0 0 0 rem(2) $accent, 0 0 0 rem(3) #fff
+    outline: none
+
+  &#{&}--textarea
+    resize: vertical
+    min-height: rem(128)
+    max-height: rem(300)
+
+  &#{&}--select
+    $icon-height: rem(7)
+    $icon-width: rem(12)
+
+    appearance: none
+    padding-right: calc($padding-x * 2 + $icon-width)
+    position: relative
+    background-image: linear-gradient(45deg, transparent 50%, $accent 50%), linear-gradient(135deg, $accent 50%, transparent 50%)
+    background-position: calc(100% - ($padding-x + $icon-width / 2)) 50%, calc(100% - $padding-x) 50%, 100% 0
+    background-size: calc($icon-width / 2) $icon-height, calc($icon-width / 2) $icon-height
+    background-repeat: no-repeat
+    &:invalid
+      color: $text-dark-gray
+    [disabled]
+      color: $text-dark-gray

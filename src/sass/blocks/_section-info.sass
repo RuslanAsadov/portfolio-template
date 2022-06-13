@@ -1,0 +1,101 @@
+@use '../utils/variables' as *
+@use '../utils/mixins' as *
+@use '../utils/functions' as *
+
+.section-info
+  --heading-color: #{$text-dark}
+  --color: #{$text-dark-gray}
+  color: var(--color)
+  max-width: rem(470)
+  @include lg
+    max-width: 100%
+
+  &--dark
+    --heading-color: #{$text-light}
+    --color: #{$text-light-gray}
+
+  &--center
+    text-align: center
+    margin: 0 auto
+    
+  &__h1
+    font-size: rem(72)
+    line-height: 1.11
+    font-weight: 800
+    letter-spacing: rem(-2)
+    color: var(--heading-color)
+    margin: 0.34em 0 0
+    @include xl
+      font-size: rem(65)
+    @include md
+      font-size: rem(60)
+    @include sm
+      font-size: rem(56)
+    @include breakpoint(345)
+      font-size: rem(52)
+
+  &__h2
+    font-size: rem(56)
+    line-height: 1.14
+    font-weight: 800
+    letter-spacing: rem(-1)
+    color: var(--heading-color)
+    margin: 0.34em 0 0
+    @include xl
+      font-size: rem(51)
+    @include md
+      font-size: rem(45)
+    @include sm
+      font-size: rem(40)
+
+  &__h3
+    font-size: rem(40)
+    line-height: 1.2
+    font-weight: 800
+    color: var(--heading-color)
+    margin: 0.425em 0 0
+
+  &__h4
+    font-size: rem(24)
+    color: var(--heading-color)
+    font-weight: 700
+    line-height: 1.3
+    margin: 0.5em 0 0
+
+  &__h5
+    font-size: rem(16)
+    line-height: 2
+    font-weight: 400
+    color: $accent
+    text-transform: uppercase
+    letter-spacing: rem(3)
+    margin: 0
+
+  &__text
+    margin: 1.5em 0 0
+    &#{&}--min-mobile-margin
+      @include md
+        margin-top: 1em
+
+  &__text-big
+    margin: 1.3em 0 0
+    font-size: rem(20)
+    line-height: 1.6 
+    color: var(--heading-color)
+
+  &__button 
+    margin-top: rem(34)
+    &#{&}--min-mobile-margin
+      @include md
+        margin-top: rem(16)
+
+  &__list
+    margin-top: rem(24)
+
+  &__link
+    color: inherit
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+    &--bright
+      color: var(--heading-color)

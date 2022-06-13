@@ -1,0 +1,46 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+  
+.button
+  box-sizing: border-box
+  display: inline-flex
+  padding: rem(14) rem(30) rem(12)
+  border: none
+  border-radius: rem(6)
+  cursor: pointer
+  background-color: $accent
+  color: $text-light
+  font-weight: 900
+  text-transform: uppercase
+  font-size: rem(14)
+  line-height: 1.2
+  transition: background-color .25s ease
+  min-height: rem(48)
+  text-decoration: none
+  align-items: center
+  justify-content: center
+  touch-action: manipulation
+  height: auto
+  &:hover
+    background-color: darken($accent, 5%)
+  &:active
+    background-color: darken($accent, 10%)
+
+  &--transparent
+    border: rem(1) solid rgba(255, 255, 255, 0.295743)
+    background-color: transparent
+    &:hover
+      background-color: rgba(255, 255, 255, 0.04)
+    &:active
+      background-color: rgba(255, 255, 255, 0.1)
+
+  &--white
+    background-color: #fff
+    color: #391400
+    box-shadow: rem(0) rem(3) rem(9) rgba(57, 20, 0, 0.08)
+    &:hover
+      background-color: darken(#fff, 2%)
+    &:active
+      background-color: darken(#fff, 4%)
+    &:focus-visible
+      box-shadow: $default-focus-visible, rem(0) rem(3) rem(9) rgba(57, 20, 0, 0.08)

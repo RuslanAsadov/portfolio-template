@@ -1,0 +1,6 @@
+@use "../utils/variables" as *;
+
+@use "node_modules/swiper/swiper.scss" with (
+  $themeColor: $accent
+);
+@use "node_modules/swiper/modules/pagination/pagination.scss";

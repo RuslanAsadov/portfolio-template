@@ -1,0 +1,25 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.section-about
+  padding: rem(211) 0 rem(112)
+  @include xl
+    padding-top: rem(151)
+  @include lg
+    padding-top: rem(101)
+
+  &__columns
+    margin-bottom: rem(176)
+    gap: rem(170)
+    @include xl
+      gap: rem(100)
+      margin-bottom: rem(130)
+    @include lg
+      gap: rem(30)
+      margin-bottom: rem(97)
+
+  &__section-info
+    max-width: rem(470)
+    @include lg
+      max-width: 100%

@@ -1,0 +1,57 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+
+.menu
+  &__list
+    @include list-reset
+    display: flex
+    color: $text-light
+    gap: rem(103)
+    @include xl
+      gap: rem(60)
+    @include lg
+      display: none
+      gap: 0
+
+  &__item
+    @include lg
+      border-bottom: rem(1) solid rgba(255, 255, 255, .05)
+      &:last-child
+        border-bottom: none
+
+  &__button
+    display: none
+    height: rem(48)
+    width: rem(48)
+    padding: 0
+    align-items: center
+    justify-content: center
+    @include lg
+      display: flex
+
+  &__link
+    color: inherit
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+    @include lg
+      display: block
+      padding: rem(8) 0
+
+  @include lg
+    &__list--open
+      display: none
+      position: absolute
+      left: 0
+      right: 0
+      top: 100%
+      background: $bg-dark
+      flex-direction: column
+      padding-top: rem(10)
+      padding-bottom: rem(22)
+      padding-left: rem(38)
+      border-top: rem(1) solid rgba(255, 255, 255, .05)
+      box-shadow: 0 rem(22) rem(20) rem(1) rgba(0, 0, 0, .1)
+      @include xl
+        display: flex

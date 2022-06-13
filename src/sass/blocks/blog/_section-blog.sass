@@ -1,0 +1,19 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.section-blog
+  padding: rem(92) 0 rem(56)
+  @include sm
+    padding-bottom: rem(40)
+
+  &__articles
+    margin-top: rem(64)
+    @include md
+      margin-top: rem(48)
+
+  &__subscription
+    margin-top: rem(68)
+    border-top: rem(1) solid #F3D1BF
+    @include sm
+      margin-top: rem(52)

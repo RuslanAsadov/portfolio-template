@@ -1,0 +1,19 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+  
+.section-first
+  min-height: calc(rem(880) - $header-height)
+  padding: calc(rem(80) - $header-padding) 0 rem(80)
+  @include xl
+    min-height: calc(rem(750) - $header-height)
+  @include lg
+    padding: calc(rem(50) - $header-padding) 0 rem(60)
+  @include md
+    padding: calc(rem(33) - $header-padding) 0 rem(48)
+    min-height: auto
+
+@media only screen and (max-height: rem(850))
+  .section-first
+    min-height: auto
+  

@@ -1,0 +1,23 @@
+@use '../utils/variables' as *
+@use '../utils/mixins' as *
+@use '../utils/functions' as *
+  
+.images-divider
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  grid-template-rows: rem(240)
+  @include xl
+    grid-template-rows: rem(188)
+  @include lg
+    grid-template-rows: rem(188)
+  @include md
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(2, rem(188))
+  @include sm
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(3, rem(188))
+
+  &__item
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat

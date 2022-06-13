@@ -1,0 +1,29 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+  
+.section-columns
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: rem(60)
+  &--reverse
+    flex-direction: row-reverse
+  &__item:first-child
+    margin-bottom: rem(10)
+  @include lg
+    gap: rem(30)
+    flex-direction: column-reverse
+    &__item:first-child
+      margin-bottom: 0
+
+  &__item
+    @include xl
+      flex-basis: 50%
+    @include lg
+      flex-basis: 100%
+  
+  &__img
+    width: 100%
+    @include lg
+      max-height: rem(450)

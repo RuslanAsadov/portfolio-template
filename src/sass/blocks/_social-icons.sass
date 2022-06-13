@@ -1,0 +1,50 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+
+.social-icons
+  @include list-reset
+  display: flex
+  gap: rem(8)
+  @include lg
+    justify-content: center
+
+  &__item
+    display: inline-block
+    height: rem(48)
+    width: rem(48)
+
+  &__link
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $accent
+    border-radius: 50%
+    width: 100%
+    height: 100%
+    transition: background-color .25s ease
+    color: #fff
+    &:hover
+      background-color: #fff
+
+    &--facebook:hover
+      color: #0165E1
+    
+    &--twitter:hover
+      color: #1D9BF0
+    
+    &--instagram:hover
+      color: #C13584
+
+  &__icon
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: rem(16)
+    max-height: rem(16)
+    height: auto
+    transition: fill .25s ease, transform .25s ease
+    fill: currentColor
+
+  &__link:hover &__icon
+    transform: scale(1.1)

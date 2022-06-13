@@ -1,0 +1,95 @@
+@use "sass:map"
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+
+.article-card
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-areas: 'img' 'category' 'title' 'date'
+  position: relative
+
+  &:hover &__img-wrapper::after
+    opacity: 0
+
+  &__title
+    grid-area: title
+    margin: rem(15) 0 0
+    font-size: rem(24)
+    line-height: 1.33
+    color: $text-dark
+    font-weight: 700
+
+  &__link
+    display: inline-block
+    color: inherit
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+    
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 2
+
+  &__date
+    grid-area: date
+    margin-top: rem(15)
+
+  &__category
+    grid-area: category
+    justify-self: start
+    margin-top: rem(26)
+    font-size: rem(20)
+    line-height: 1.6
+    text-decoration: none
+    color: $text-dark
+    z-index: 3
+    &:hover
+      text-decoration: underline
+
+  &__img-wrapper
+    max-height: rem(224)
+    position: relative
+    overflow: hidden
+    border-radius: rem(6)
+    @include lg
+      max-height: rem(300)
+    @include md
+      max-height: rem(224)
+
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-color: #5C2000
+      opacity: .32
+      transition: opacity .25s ease
+
+  &__img
+    grid-area: img
+    display: block
+    max-width: 100%
+    height: auto
+    object-fit: cover
+    width: 100%
+
+  @media only screen and (min-width: map.get($breakpoints, 'lg'))
+    &#{&}--featured &__img-wrapper
+      max-height: rem(464)
+
+    &#{&}--featured &__title
+      font-size: rem(40)
+      margin-top: rem(32)
+
+    &#{&}--featured &__date
+      margin-top: rem(11)

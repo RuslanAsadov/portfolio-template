@@ -1,0 +1,21 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+  
+.header
+  color: $text-light
+  background-color: $bg-dark
+  padding: rem(15) 0
+  height: $header-height
+  position: relative
+  
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__button
+    min-width: rem(138)
+    @include lg
+      display: none
+

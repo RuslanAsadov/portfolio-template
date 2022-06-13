@@ -1,0 +1,36 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+
+.blocks-list
+  @include list-reset
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  padding-right: rem(1)
+  @include lg
+    padding-right: 0
+    padding-bottom: rem(1)
+    grid-template-columns: 1fr
+
+  &__item
+    margin-right: rem(-1)
+    border: rem(1) solid #F3D1BF
+    border-radius: rem(6)
+    &:first-child
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+    &:last-child
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+      
+    @include lg
+      margin-right: 0
+      margin-bottom: rem(-1)
+      &:first-child
+        border-top-right-radius: rem(6)
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+      &:last-child
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+        border-bottom-left-radius: rem(6)

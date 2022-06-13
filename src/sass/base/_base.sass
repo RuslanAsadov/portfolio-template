@@ -1,0 +1,47 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+::selection
+  background-color: $accent
+  color: $text-light
+
+:focus-visible
+  outline: none
+  box-shadow: $default-focus-visible
+
+body
+  font-family: $default-font
+  line-height: 2
+  color: $text-dark-gray
+  min-width: rem(320)
+  overflow-x: hidden
+
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+  &.img-width
+    width: 100%
+
+.container
+  max-width: $continer-max-width
+  width: 100%
+  padding-right: $continer-gutter
+  padding-left: $continer-gutter
+  margin-right: auto
+  margin-left: auto 
+  @include xl
+    max-width: rem(930)
+  @include lg
+    max-width: rem(690)
+  @include md
+    max-width: rem(510)
+  @include sm
+    max-width: 100%

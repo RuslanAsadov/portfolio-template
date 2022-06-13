@@ -1,0 +1,9 @@
+@use '../utils/variables' as *;
+
+@use 'node_modules/hamburgers/_sass/hamburgers/hamburgers' with (
+  $hamburger-layer-color: $text-light,
+  $hamburger-layer-height: 2px,
+  $hamburger-layer-width: 16px,
+  $hamburger-layer-spacing: 4px,
+  $hamburger-layer-border-radius: 1px
+);

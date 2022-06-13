@@ -1,0 +1,19 @@
+@use '../utils/variables' as *
+@use '../utils/functions' as *
+@use '../utils/mixins' as *
+  
+.section-topline
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  gap: rem(30)
+  @include sm
+    flex-direction: column
+    align-items: flex-start
+    gap: rem(35)
+
+  &__button
+    margin-bottom: rem(16)
+    flex-shrink: 0
+    @include sm
+      margin-bottom: 0

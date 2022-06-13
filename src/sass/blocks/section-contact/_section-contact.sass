@@ -1,0 +1,23 @@
+@use '../../utils/variables' as *
+@use '../../utils/functions' as *
+@use '../../utils/mixins' as *
+  
+.section-contact
+  @include md
+    padding: rem(80) 0 rem(76)
+  &__address
+    color: $text-light
+    font-style: normal
+    margin-top: rem(45)
+    @include md
+      margin-top: rem(42)
+
+  &__form
+    max-width: rem(570)
+    width: 100%
+    @include lg
+      max-width: 100%
+
+  &__columns 
+    @include lg
+      gap: rem(60)
